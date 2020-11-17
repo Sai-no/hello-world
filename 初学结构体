@@ -1,0 +1,28 @@
+#include "stdio.h"
+#include "string.h"
+
+struct BOOK//定义一个结构体
+
+{
+	char name[20];
+
+	short int price;
+
+};
+
+int main()
+{
+	struct BOOK B1 = {"C语言程序设计",55};
+
+	struct BOOK* pd = &B1;
+
+	strcpy(B1.name ,"C++");//改变字符串，（地址，新字符）
+
+	(*pd).price = 15;//改变价格，价格为变量，可以直接改变
+
+	printf("书名：%s\n",(*pd).name);//*解地址符，*pd==B1
+	printf("价格：%d\n",pd->price);//指向箭头，可以这么表示
+
+	return 0;
+}
+
