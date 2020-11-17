@@ -1,0 +1,23 @@
+{
+	int ret,ch;
+	char password[20] = {0};
+
+	printf("请输入密码：");
+
+	scanf("%s",password);//s输入密码，存储在password中（123456回车，相当于\n）
+	//缓冲区还存在一个‘\n’
+
+	while ((ch=getchar()) != '\n');//将缓冲区的数据全部读走
+
+	printf("是否确认（Y/N）:");
+
+	ret = getchar();//读取了缓冲区剩下的数据
+
+	if(ret == 'Y')
+		printf("确认成功\n");
+
+	else
+		printf("放弃确认\n");
+
+	return 0;
+}
